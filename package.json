@@ -1,0 +1,33 @@
+{
+  "name": "shipment-anomaly-alerting",
+  "version": "1.0.0",
+  "description": "Shipment tracking and anomaly alerting platform: layered Express REST API, PostgreSQL, cron-based anomaly detection, AWS SNS alerts",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "migrate": "node scripts/migrate.js",
+    "seed": "node scripts/seed.js",
+    "replay": "node scripts/replay.js",
+    "test": "jest --runInBand"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-sns": "^3.1164.0",
+    "@faker-js/faker": "^9.9.0",
+    "dotenv": "^18.0.9",
+    "express": "^4.22.3",
+    "node-cron": "^3.0.3",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.3.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupFiles": [
+      "<rootDir>/tests/setupEnv.js"
+    ]
+  }
+}
